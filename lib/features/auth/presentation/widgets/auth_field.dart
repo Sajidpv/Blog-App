@@ -18,6 +18,7 @@ class AuthField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
       ),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
         if (value!.isEmpty) {
           return "$hintText is missing!";
