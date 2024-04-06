@@ -48,7 +48,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         email: event.email, password: event.password, name: event.name));
 
     response.fold((l) {
-      print(l.message);
       emit(AuthFailure(l.message));
     }, (r) => _emitAuthSuccess(r, emit));
   }
@@ -60,12 +59,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final res = await _userLogin(
       UserLoginParams(
         email: event.email,
-        password: event.email,
+        password: event.password,
       ),
     );
 
     res.fold((l) {
-      print(l.message);
       emit(AuthFailure(l.message));
     }, (r) => _emitAuthSuccess(r, emit));
   }

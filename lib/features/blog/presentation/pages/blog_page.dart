@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class BlogPage extends StatelessWidget {
   const BlogPage({super.key});
-
+  static route() => MaterialPageRoute(builder: (context) => const BlogPage());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +18,13 @@ class BlogPage extends StatelessWidget {
             icon: const Icon(CupertinoIcons.add_circled),
           ),
         ],
+      ),
+      body: const Text(
+        'First Text\nnext text',
+        style: TextStyle(
+          fontSize: 16,
+          height: .8,
+        ),
       ),
     );
   }
