@@ -6,8 +6,10 @@ class Blog {
   final String imageUrl;
   final List<String> topics;
   final DateTime updatedAt;
+  final String? userName;
 
   Blog({
+    this.userName,
     required this.id,
     required this.userId,
     required this.title,

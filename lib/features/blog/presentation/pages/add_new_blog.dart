@@ -75,14 +75,14 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
           if (state is BlogFailure) {
             showSnackBar(context, state.error);
           }
-          if (state is BlogSuccess) {
+          if (state is BlogUploadSuccess) {
             showSnackBar(context, 'New blog added');
             Navigator.pushAndRemoveUntil(
                 context, BlogPage.route(), (route) => false);
           }
         },
         builder: (context, state) {
-          if (state is BlogSuccess) {
+          if (state is BlogLoading) {
             return const Loader();
           }
           return SingleChildScrollView(
